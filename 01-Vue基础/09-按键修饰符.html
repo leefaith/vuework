@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <form action="">
+            <div>
+                用户名：
+                <input type="text" v-on:keyup.delete='clearContent' v-model='uname'>
+            </div>
+            <div>
+                密码：
+                <input type="text" v-on:keyup.f1='handleSubmit' v-model='pwd'>
+            </div>
+            <div>
+                <button v-on:click='handleSubmit'>提交</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        Vue.config.keyCodes.f1 = 113
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                uname: '',
+                pwd: ''
+            },
+            methods: {
+                clearContent: function() {
+                    // 按delete键的时候，清空用户名
+                    this.uname = '';
+                },
+                handleSubmit: function() {
+                    console.log(this.uname, this.pwd)
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+
+        <input type="text" v-bind:value="msg" v-on:input='handle'>
+        <!-- 简写模式 -->
+        <input type="text" v-bind:value='msg' v-on:input='msg=$event.target.value'>
+
+        <input type="text" v-model='msg'>
+
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello'
+            },
+            methods: {
+                // v-model的低层实现原理
+                // 使用输入域中的最新的数据覆盖原来的数据
+                handle: function(event) {
+                    this.msg = event.target.value;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
