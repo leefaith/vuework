@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //无参数，一行，无返回值的函数
+      //    let func1=function(){
+      //        console.log('hello Lisa');
+      //    }
+      let func1 = () => console.log("hello Lisa");
+      func1();
+      //1个参数，一行，无返回值的函数
+      //    let func2=function(p1){
+      //        console.log(p1);
+      //    }
+
+      let func2 = (p1) => console.log(p1);
+      func2("lida");
+      //2个参数，一行，无返回值的函数
+      //    let func3=function(p1,p2){
+      //        console.log(p1,p2);
+      //    }
+
+      let func3 = (p1, p2) => console.log(p1, p2);
+      func3("lida", "haha");
+
+      //无参数，一行，有返回值的函数
+      //    let func4=function()){
+      //       return 'hello lisa'
+      //    }
+      let func4 = () => "hellolisayaya";
+      let fun4Res = func4();
+      console.log(fun4Res);
+
+        //1参数，一行，有返回值的函数
+      //    let func5=function(p1){
+      //       return p1+ 'hello lisa'
+      //    }
+      let func5 =p1=>p1+'hellolida'
+      let fun5Res = func5('miya ');
+      console.log(fun5Res);
+
+            //2参数，一行，有返回值的函数
+      //    let func6=function(p1,p2){
+      //       return p1+ p2+'hello lisa'
+      //    }
+      let func6 =(p1,p2)=>{
+          return p1+p2+'hellolida'
+        }
+      let fun6Res = func6('miya ', ' ella ');
+      console.log(fun6Res);
+
+    </script>
+  </body>
+</html>

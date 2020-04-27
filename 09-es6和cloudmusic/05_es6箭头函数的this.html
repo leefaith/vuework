@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //创建时this是谁。运行时this就是谁
+
+      let person = {
+        name: "lisa",
+        food: "banana",
+        sayHi() {
+          console.log(this);
+          //保存this
+          //let that = this;
+          // setTimeout(function(){
+          //   console.log(this);//this 是window
+          // }, 100);
+
+
+          console.log(this); //person
+          
+          setTimeout(() => {
+            console.log(this); //person
+          }, 100);
+        },
+      };
+      //谁点出来就是谁
+      person.sayHi();  //person
+    </script>
+  </body>
+</html>
